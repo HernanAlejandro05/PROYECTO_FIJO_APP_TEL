@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<head>
+        <title>Renta Interna</title>
+        <f:metadata>
+			<f:viewParam name="codigo" value="#{datosController.salud}" />
+			<f:viewAction action="#{datosController.cargarDatosProducto()}" />
+		</f:metadata>
+</head>
+    <body>
+        <form action="CalculoRenta.jsp">
+        <div>
+            Salario anual: <input name="sueldo" type="text" required="true"/><br></br>
+            Ingresos aporte: <input name="ingreso" type="text" required="true"/><br></br>
+            Impuesto de capital: <input name="capital" type="text" required="true"/><br></br>
+            Utilidades: <input name="utilidad" type="text" required="true"/><br></br>
+            
+            Total Ingresos <a>0.00</a>
+        </div>
+        <div>
+            <h1>Gastos Personales</h1>
+            Alimentacion: <input name="alimentacion" type="text" required="true"/><br></br>
+            Vivienda <input name="vivienda" type="text" required="true"/><br></br>
+            Educacion <input name="educacion" type="text" required="true"/><br></br>
+            Vestimenta: <input name="vestimenta" type="text" required="true"/><br></br>
+            Salud: <input name="salud" type="text" required="true"/><br></br>
+            
+            Total Deductora <a>0.00</a>
+        </div>
+        
+        <input type="submit" value="Calcular"/><br></br>
+        <input type="reset" value="Limpiar"/>
+        </form>
+
+</body>
+</html>

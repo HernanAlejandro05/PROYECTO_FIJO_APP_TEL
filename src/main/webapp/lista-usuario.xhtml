@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+				<h:form>
+				<!-- 		TABLA -->
+				<h:dataTable var="_usuario" value="#{usuarioController.usuarios}"
+					styleClass="table">
+					<h:column>
+						<f:facet name="header">
+							<a id="cabeceratabla">Cedula</a>
+						</f:facet>
+						<a id="cabeceratabla"> #{_usuario.cedula}</a>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<a id="cabeceratabla">Nombre</a>
+						</f:facet>
+						<a id="cabeceratabla"> #{_usuario.nombre}</a>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<a id="cabeceratabla">Apellido</a>
+						</f:facet>
+						<a id="cabeceratabla"> #{_usuario.apellido}</a>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<a id="cabeceratabla">Mail</a>
+						</f:facet>
+						<a id="cabeceratabla">#{_usuario.mail}</a>
+					</h:column>
+					
+
+
+					<h:column>
+						<f:facet name="header">
+							<a id="cabeceratabla">Acciones</a>
+						</f:facet>
+						<h:commandButton class="listar_btn4"
+							action="#{usuarioController.editar(_usuario)}" value="Editar" />
+							&nbsp;
+						<h:commandButton class="listar_btn4"
+							action="#{usuarioController.eliminar(_usuario)}" value="Eliminar" />
+					</h:column>
+				</h:dataTable>
+				<br />
+				<h:commandButton class="listar_btn3" action="#{usuarioController.crear()}"
+					value="Regresar" />
+			</h:form>
+</body> 
+</html>
